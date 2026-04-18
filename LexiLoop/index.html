@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexiLoop - Learn fast. Repeat smart. Remember longer.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="logo">LexiLoop</span><br>
+            <small>Learn fast. Repeat smart. Remember longer.</small></h1>
+        </header>
+
+        <!-- Add Flashcard Section -->
+        <section id="add-section" class="section active">
+            <h2>Add New Flashcard</h2>
+            <form id="flashcard-form">
+                <input type="text" id="term" placeholder="Enter term..." required>
+                <input type="text" id="definition" placeholder="Enter definition..." required>
+                <button type="submit">Add Flashcard</button>
+            </form>
+            <div id="flashcard-list"></div>
+        </section>
+
+        <!-- Study Mode Section -->
+        <section id="study-section" class="section">
+            <div class="mastery-tracker">
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <p id="mastery-percent">0% Mastery</p>
+            </div>
+            <div id="current-card" class="flashcard" style="display: none;">
+                <div class="card-content">
+                    <h3 id="card-term"></h3>
+                    <p id="card-definition" style="display: none;"></p>
+                </div>
+                <div class="card-actions">
+                    <button id="flip-btn">Flip</button>
+                    <button id="learned-btn">Learned ✓</button>
+                    <button id="not-learned-btn">Not Learned ✗</button>
+                </div>
+            </div>
+            <div class="study-controls">
+                <button id="start-study">Start Study Mode</button>
+                <button id="end-study">End Study Mode</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
