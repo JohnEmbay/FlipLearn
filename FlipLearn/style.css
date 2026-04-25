@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -42,7 +42,7 @@ header small {
     font-size: 1.1rem;
 }
 
-/* Sections */
+
 .section {
     padding: 2rem;
     display: none;
@@ -58,7 +58,7 @@ h2 {
     text-align: center;
 }
 
-/* Form Styles */
+
 #flashcard-form {
     display: flex;
     flex-direction: column;
@@ -98,7 +98,7 @@ button:hover {
     box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
 }
 
-/* Flashcard List */
+
 .flashcard-item {
     background: #f7fafc;
     border: 2px solid #e2e8f0;
@@ -140,7 +140,7 @@ button:hover {
     background: #ed8936;
 }
 
-/* Study Mode */
+
 .mastery-tracker {
     text-align: center;
     margin-bottom: 2rem;
@@ -229,7 +229,7 @@ button:hover {
     flex: 1;
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 600px) {
     .container {
         width: 95%;

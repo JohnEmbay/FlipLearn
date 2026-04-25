@@ -8,7 +8,7 @@ let studyDeck = [];
 let isFlipped = false;
 let editingId = null;
 
-// DOM elements
+
 const addSection = document.getElementById('add-section');
 const studySection = document.getElementById('study-section');
 const flashcardForm = document.getElementById('flashcard-form');
@@ -26,13 +26,13 @@ const endStudyBtn = document.getElementById('end-study');
 const masteryPercent = document.getElementById('mastery-percent');
 const progressBar = document.getElementById('progress-bar');
 
-// Initialize app
+
 document.addEventListener('DOMContentLoaded', function() {
     loadFlashcards();
     renderFlashcardList();
     updateMastery();
     
-    // Event listeners
+    
     flashcardForm.addEventListener('submit', handleAddFlashcard);
     flipBtn.addEventListener('click', toggleFlip);
     learnedBtn.addEventListener('click', () => handleLearnStatus(true));
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     endStudyBtn.addEventListener('click', endStudyMode);
 });
 
-// Add or update flashcard
+
 function handleAddFlashcard(e) {
     e.preventDefault();
     
@@ -54,7 +54,7 @@ function handleAddFlashcard(e) {
     }
     
     if (editingId) {
-        // Update existing flashcard
+        
         const card = flashcards.find(c => c.id === editingId);
         if (card) {
             card.term = term;
@@ -63,7 +63,7 @@ function handleAddFlashcard(e) {
         editingId = null;
         flashcardForm.querySelector('button[type="submit"]').textContent = 'Add Flashcard';
     } else {
-        // Add new flashcard
+        
         const newCard = {
             id: Date.now(),
             term,
@@ -80,7 +80,7 @@ function handleAddFlashcard(e) {
     updateMastery();
 }
 
-// Render list of flashcards
+
 function renderFlashcardList() {
     flashcardList.innerHTML = '';
     
@@ -114,7 +114,6 @@ function editFlashcard(id) {
     }
 }
 
-// Delete flashcard
 function deleteFlashcard(id) {
     if (confirm('Delete this flashcard?')) {
         flashcards = flashcards.filter(c => c.id !== id);
@@ -124,14 +123,14 @@ function deleteFlashcard(id) {
     }
 }
 
-// Start study mode
+
 function startStudyMode() {
     if (flashcards.length === 0) {
         alert('Please add some flashcards first!');
         return;
     }
     
-    // Shuffle deck (Fisher-Yates)
+    
     studyDeck = [...flashcards].sort(() => Math.random() - 0.5);
     currentStudyIndex = 0;
     isFlipped = false;
@@ -143,7 +142,7 @@ function startStudyMode() {
     updateMastery();
 }
 
-// End study mode
+ 
 function endStudyMode() {
     addSection.classList.add('active');
     studySection.classList.remove('active');
